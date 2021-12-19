@@ -11,4 +11,16 @@ const colorBoardDark =  "#99999999";
 const marginSide = 10;
 const marginTop = 50;
 
+const testepiece = [
+    [I, "blue"],
+    [Z, "yellow"],
+    [O, "red    "],
+    [L, "purple"],
+    [T, "green"]
+];
+
 boardFill(row, column, square);
+createRandonPiece();
+ 
+
+

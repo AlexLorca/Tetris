@@ -5,8 +5,8 @@ const column = 14;
 const row = 10;
 const square = 30;
 
-const colorBoardlight = "#33333333";
-const colorBoardDark =  "#99999999";
+const colorBoardlight = "rgba(51, 51, 51, 0.20)";
+const colorBoardDark =  "rgba(153, 153, 153, 0.60)";
 
 const marginSide = 10;
 const marginTop = 50;

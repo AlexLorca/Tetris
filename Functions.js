@@ -7,14 +7,16 @@ function boardFill (x, y, size){
         alter++;
         for (let j = 0; j < y; j++){
             if (alter % 2 === 0){
-                drawSquare(i* size + marginSide, j * size + marginTop, size, colorBoardDark)
+                drawSquare(i, j , size, "white")
+                drawSquare(i, j , size, colorBoardDark)
                 alter++;
             }
             else {
-                drawSquare(i* size + marginSide, j * size + marginTop, size, colorBoardlight)
+                drawSquare(i, j , size, "white")
+                drawSquare(i, j , size, colorBoardlight)
                 alter++;
             }
-            drawGrid(i* size + marginSide, j * size + marginTop, size)
+            drawGrid(i, j , size)
 
         };
     };
@@ -30,8 +32,8 @@ function drawborder(){
 }
 
 function drawGrid (x, y, size){
-    ctx.fillRect (x , y, size, 1);
-    ctx.fillRect (x , y, 1, size);
+    ctx.fillRect (x * size + marginSide, y * size + marginTop, size, 1);
+    ctx.fillRect (x * size + marginSide , y  * size + marginTop, 1, size);
 }
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,7 +41,7 @@ function drawGrid (x, y, size){
 // Generic square draw
 function drawSquare(x, y, size, color){
     ctx.fillStyle = color;
-    ctx.fillRect (x, y, size, size);
+    ctx.fillRect (x * size + marginSide, y * size + marginTop, size, size);
 }   
 
 
@@ -50,4 +52,5 @@ function createRandonPiece(){
     const randon = randonPiece();
     const newpiece = new Pieces(testepiece[randon][0], testepiece[randon][1])
     newpiece.draw();
+    newpiece.undraw()
 }
